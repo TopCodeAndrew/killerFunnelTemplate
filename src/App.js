@@ -1,11 +1,15 @@
 import routes from "./routes";
-import Landing from "./Components/Landing"
+import Header from "./Component Blocks/Header";
+import Footer from "./Component Blocks/Footer";
 
 function App() {
-    return <div className="App">
-    {/* <Landing/> */}
-    {routes}
-    </div>;
+    return (
+        <div className="App">
+            <Header />
+            {routes}
+            <Footer />
+        </div>
+    );
 }
 
 export default App;

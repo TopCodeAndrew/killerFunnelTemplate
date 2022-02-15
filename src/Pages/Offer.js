@@ -8,10 +8,13 @@ import axios from "axios";
 function Offer(props) {
     const navigate = useNavigate();
 
-
-    return <div>This is Offer.js
-    <Button onClick={() => navigate("/")}>landing</Button>
-    <Button onClick={() => navigate("/thank-you")}>thank you</Button></div>;
+    return (
+        <div>
+            This is Offer.js
+            <Button onClick={() => navigate("/")}>landing</Button>
+            <Button onClick={() => navigate("/thank-you")}>thank you</Button>
+        </div>
+    );
 }
 
 export default Offer;
