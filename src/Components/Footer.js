@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import Button from "@mui/material/Button";
-import styled from "styled-components";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Footer() {
     const navigate = useNavigate();
