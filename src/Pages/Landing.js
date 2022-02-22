@@ -14,10 +14,12 @@ let cellSize = "650px";
 
 const LandingBlock = styled.div`
     display: flex;
+    flex-direction: column;
     position: relative;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: row;
+    align-items: center;
+    border: 2px solid green;
+    justify-content: flex-start;
+    /* flex-direction: row; */
     margin-bottom: 500px;
 `;
 
@@ -39,7 +41,32 @@ const TopSection = styled.div`
     }
 `;
 
-const InnerStack = styled.div``;
+const MidSection = styled.div`
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 1150px;
+    border: 2px solid red;
+    @media (max-width: ${midSize}) {
+        padding-right: 0;
+        flex-direction: column;
+        align-items: center;
+    }
+`;
+
+let MidSubSection = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 45%;
+    /* height: 100%; */
+    border: 2px solid pink;
+`;
 
 const FloatingBackground = styled.img`
     /* height: 200px; */
@@ -74,7 +101,11 @@ const DisplayPic = styled.img`
     height: 400px;
     /* height: 200px; */
     text-align: center;
-    object-fit: contain;
+    object-fit: cover;
+    float: right;
+    object-position: right;
+    box-shadow: -5px 5px 15px -2px;
+    border-radius: 10px;
 `;
 
 const PaymentStack = styled(Stack)`
@@ -88,15 +119,14 @@ const PaymentStack = styled(Stack)`
     justify-content: flex-start;
     /* border: 2px solid red; */
     border-radius: 10px;
-    box-shadow: -5px 5px 10px 5px;
+    box-shadow: -5px 5px 15px -2px;
     @media (max-width: ${midSize}) {
         width: calc(100% - 30px);
-        margin: 40px 0px 500px;
+        margin: 40px 0px 50px;
         box-shadow: 0px 0px 10px 1px;
     }
     @media (max-width: ${cellSize}) {
         width: calc(100% - 10px);
-        margin: 40px 0px 500px;
         box-shadow: 0px 0px 10px 1px;
     }
 `;
@@ -270,6 +300,15 @@ function Landing() {
                     <Typography variant="h3">PAYMENT HERE</Typography>
                 </PaymentStack>
             </TopSection>
+            <MidSection>
+                <MidSubSection>
+                    <Typography variant="h2">Connect with Us</Typography>
+                </MidSubSection>
+                <MidSubSection>
+                    <Typography variant="h2">Testimonials</Typography>
+                    <Typography variant="p">Check here for answers.</Typography>
+                </MidSubSection>
+            </MidSection>
         </LandingBlock>
     );
 }
