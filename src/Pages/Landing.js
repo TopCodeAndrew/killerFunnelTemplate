@@ -4,6 +4,12 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import triangleBackground from "../Assets/triangle-background.jpg";
 import happyUkePlayer from "../Assets/happy-uke-player.jpg";
+import testimonial1 from "../Assets/Testimonials/Testimonial-1.png";
+import testimonial2 from "../Assets/Testimonials/Testimonial-2.png";
+import testimonial3 from "../Assets/Testimonials/Testimonial-3.png";
+import testimonial4 from "../Assets/Testimonials/Testimonial-4.png";
+import testimonial5 from "../Assets/Testimonials/Testimonial-5.png";
+import andrewProfilePic from "../Assets/LifeSmart-Profile-Pic.jpg";
 import styled from "styled-components";
 import { Stack, Typography } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
@@ -129,6 +135,29 @@ const PaymentStack = styled(Stack)`
         width: calc(100% - 10px);
         box-shadow: 0px 0px 10px 1px;
     }
+`;
+
+const ContactPic = styled.img`
+    width: 70%;
+    /* height: 400px; */
+    /* height: 200px; */
+    text-align: center;
+    object-fit: cover;
+    float: right;
+    object-position: right;
+    box-shadow: -5px 5px 15px -2px;
+    border-radius: 10px;
+`;
+const TestimonialPic = styled.img`
+    width: 70%;
+    /* height: 400px; */
+    /* height: 200px; */
+    text-align: center;
+    object-fit: cover;
+    float: right;
+    object-position: right;
+    box-shadow: -5px 5px 15px -2px;
+    border-radius: 10px;
 `;
 
 function Landing() {
@@ -303,10 +332,39 @@ function Landing() {
             <MidSection>
                 <MidSubSection>
                     <Typography variant="h2">Connect with Us</Typography>
+                    <ContactPic src={andrewProfilePic} />
+                    <Typography
+                        variant="h3"
+                        sx={{
+                            fontSize: "20px",
+                            textAlign: "center",
+                            margin: "20px 0 15px 10px",
+
+                            fontStyle: "italic",
+                            "@media(max-width: 650px)": {
+                                fontSize: "18px",
+                            },
+                        }}
+                    >
+                        "I created this course because I believe ANYONE can play
+                        music well. Now, it has helped thousands of people
+                        worldwide. I would be honored to help you take your
+                        first (or next) step in your journey with this
+                        instrument. Let's start making music!"
+                        <br /> Andrew J. Smith,
+                        <br /> Lead Instructor
+                    </Typography>
                 </MidSubSection>
                 <MidSubSection>
                     <Typography variant="h2">Testimonials</Typography>
-                    <Typography variant="p">Check here for answers.</Typography>
+                    <Typography variant="p">
+                        Thousands of happy students agree!
+                    </Typography>
+                    <TestimonialPic src={testimonial1} />
+                    <TestimonialPic src={testimonial2} />
+                    <TestimonialPic src={testimonial3} />
+                    <TestimonialPic src={testimonial4} />
+                    <TestimonialPic src={testimonial5} />
                 </MidSubSection>
             </MidSection>
         </LandingBlock>
