@@ -23,10 +23,9 @@ const LandingBlock = styled.div`
     flex-direction: column;
     position: relative;
     align-items: center;
-    border: 2px solid green;
+    /* border: 2px solid green; */
     justify-content: flex-start;
     /* flex-direction: row; */
-    margin-bottom: 500px;
 `;
 
 const TopSection = styled.div`
@@ -49,19 +48,51 @@ const TopSection = styled.div`
 
 const MidSection = styled.div`
     width: 100%;
-    height: 400px;
+    /* height: 400px; */
     display: flex;
     flex-direction: row;
     position: relative;
     align-items: flex-start;
     justify-content: space-between;
     max-width: 1150px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     @media (max-width: ${midSize}) {
         padding-right: 0;
         flex-direction: column;
         align-items: center;
     }
+`;
+const BottomSection = styled.div`
+    width: 100%;
+    /* height: 200px; */
+    border-top: 4px solid rgb(120, 129, 120);
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: flex-start;
+    justify-content: center;
+    background: green;
+`;
+
+const InnerBottomSection = styled.div`
+    /* height: 200px; */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: flex-start;
+    justify-content: space-between;
+    background: grey;
+    max-width: 1150px;
+`;
+
+const BottomBox = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 200px;
+    width: 47%;
+    background-color: blue;
 `;
 
 let MidSubSection = styled.div`
@@ -70,8 +101,10 @@ let MidSubSection = styled.div`
     justify-content: flex-start;
     align-items: center;
     width: 45%;
+    max-width: 1150px;
+
     /* height: 100%; */
-    border: 2px solid pink;
+    /* border: 2px solid pink; */
 `;
 
 const FloatingBackground = styled.img`
@@ -149,14 +182,15 @@ const ContactPic = styled.img`
     border-radius: 10px;
 `;
 const TestimonialPic = styled.img`
-    width: 70%;
+    width: 100%;
+    margin-bottom: 20px;
     /* height: 400px; */
     /* height: 200px; */
     text-align: center;
     object-fit: cover;
     float: right;
     object-position: right;
-    box-shadow: -5px 5px 15px -2px;
+    box-shadow: -2px 2px 10px -2px;
     border-radius: 10px;
 `;
 
@@ -331,7 +365,9 @@ function Landing() {
             </TopSection>
             <MidSection>
                 <MidSubSection>
-                    <Typography variant="h2">Connect with Us</Typography>
+                    <Typography variant="h2" sx={{ textAlign: "center" }}>
+                        Message from the Instructor
+                    </Typography>
                     <ContactPic src={andrewProfilePic} />
                     <Typography
                         variant="h3"
@@ -349,7 +385,7 @@ function Landing() {
                         "I created this course because I believe ANYONE can play
                         music well. Now, it has helped thousands of people
                         worldwide. I would be honored to help you take your
-                        first (or next) step in your journey with this
+                        first (or next) steps in your musical journey with this
                         instrument. Let's start making music!"
                         <br /> Andrew J. Smith,
                         <br /> Lead Instructor
@@ -357,7 +393,13 @@ function Landing() {
                 </MidSubSection>
                 <MidSubSection>
                     <Typography variant="h2">Testimonials</Typography>
-                    <Typography variant="p">
+                    <Typography
+                        sx={{
+                            fontSize: "20px",
+                            marginBottom: "20px",
+                        }}
+                        variant="p"
+                    >
                         Thousands of happy students agree!
                     </Typography>
                     <TestimonialPic src={testimonial1} />
@@ -367,6 +409,18 @@ function Landing() {
                     <TestimonialPic src={testimonial5} />
                 </MidSubSection>
             </MidSection>
+            <BottomSection>
+                <InnerBottomSection>
+                    <BottomBox>
+                        <div>test</div>
+                        <div>test</div>
+                    </BottomBox>
+                    <BottomBox>
+                        <div>test</div>
+                        <div>test</div>
+                    </BottomBox>
+                </InnerBottomSection>
+            </BottomSection>
         </LandingBlock>
     );
 }
