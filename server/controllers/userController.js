@@ -19,8 +19,9 @@ module.exports = {
         res.status(200).send(userArr);
     },
     addUserEmail: async (req, res) => {
-        console.log(req.body.userEmail);
+        console.log(req.body);
         userArr.push(req.body);
+        console.log(userArr);
         res.status(200).send("successfully added user email");
     },
 };

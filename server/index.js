@@ -17,6 +17,6 @@ let cb = () => {
 
 app.get("/", userController.getUserData);
 app.get("/api/users", userController.getUserData);
-app.post("/api/users", userController.addUserEmail);
+app.post("/api/email", userController.addUserEmail);
 
 app.listen(SERVER_PORT, () => console.log(`Running on port ${SERVER_PORT}`));
